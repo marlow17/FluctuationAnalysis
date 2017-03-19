@@ -1,0 +1,57 @@
+Long-range temporal and spatial correlations have been reported in a 
+remarkable number of studies. A classical approach to analyze this is 
+detrended fluctuation analysis (DFA).
+
+The current Malab implementation provides an algorithm not only to quantify
+power-law scaling but first to test it against alternatives via (Bayesian)
+model comparison.
+
+Like in conventional DFA, after removing (linear or nonlinear) trends of a 
+signal is determine its mean squared fluctuations in consecutive intervals.
+In contrast to DFA all values per interval are used to approximate the
+distribution of these mean squared fluctuations.
+This allows for estimating the corresponding log-likelihood as a function
+of interval size without presuming the fluctuations to be normally
+distributed.
+
+Reference
+Ton & Daffertshofer, Model selection for identifying power-law scaling
+Neuroimage 136:215-26, 2016, doi:10.1016/j.neuroimage.2016.01.008
+
+--------------------------------------------------------------------------
+
+-- main function (we recommend using this wrapper function only
+
+fluctuationAnalysis.m
+
+-- some examples
+
+DFAexamples.m
+DFAmoreExamples.m
+
+-- helper functions to generate some time series (used in the examples)
+
+fftfgn.m                generate an fGn sequence with given Hurst exponent
+psd2signal.m            generate a signal with given power spectrum
+psdfgn.m                generate an fGn with given (set of) Hurst exponent
+randomizeFourierPhase.m	randomize the Fourier phase
+
+-- private functions (putting them private improves the overview)
+
+reportDetails.m                 text report + graphics of results
+diffusionAnalysis.m             conventional diffusion analysis (SDA)
+detrendedFluctuationAnalysis.m	conventional DFA
+defineModelCatalogue.m          set the model to compare
+detrendedDensities.m            estimate the fluctuation densities
+modelSelection.m                non-parametric model comparison (DFA+)
+modelSelectionGauss.m           parametric model comparison (DFA-)
+	
+--------------------------------------------------------------------------
+
+All files are released under the terms of the GNU General Public License,
+version 3. See http://www.gnu.org/licenses/gpl.html
+
+--------------------------------------------------------------------------
+
+Author: Andreas Daffertshofer (a.daffertshofer@vu.nl)
+
