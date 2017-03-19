@@ -7,7 +7,7 @@ power-law scaling but first to test it against alternatives via (Bayesian)
 model comparison.
 
 Like in conventional DFA, after removing (linear or nonlinear) trends of a 
-signal is determine its mean squared fluctuations in consecutive intervals.
+signal, mean squared fluctuations in consecutive intervals are determined.
 In contrast to DFA all values per interval are used to approximate the
 distribution of these mean squared fluctuations.
 This allows for estimating the corresponding log-likelihood as a function
