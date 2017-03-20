@@ -12,10 +12,10 @@ function DFAexamples(n,duration,numOfTrials,fs)
 % This file is released under the terms of the GNU General Public License,
 % version 3. See http://www.gnu.org/licenses/gpl.html
 
-if nargin<4 || isempty(fs), fs=1000; end              % def. fs = 1 kHz
-if nargin<3 || isempty(fs), numOfTrials=10; end       % def. # trials = 10
-if nargin<2 || isempty(duration), duration=7*60; end  % def. dur. = 7 min
-if nargin<1 || isempty(n), n=1:4; end                 % run all examples
+if nargin<4 || isempty(fs), fs=1000; end                 % def. fs = 1 kHz
+if nargin<3 || isempty(numOfTrials), numOfTrials=10; end % def. # trials = 10
+if nargin<2 || isempty(duration), duration=7*60; end     % def. dur. = 7 min
+if nargin<1 || isempty(n), n=1:4; end                    % run all examples
 
 numOfSamples=duration*fs;
 

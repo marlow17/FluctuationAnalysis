@@ -12,10 +12,10 @@ function DFAmoreExamples(n,duration,numOfTrials,fs)
 % This file is released under the terms of the GNU General Public License,
 % version 3. See http://www.gnu.org/licenses/gpl.html
 
-if nargin<4 || isempty(fs), fs=1000; end             % def. fs = 1 kHz
-if nargin<3 || isempty(fs), numOfTrials=10; end      % def. # trials = 10
-if nargin<2 || isempty(duration), duration=7*60; end % def. duration = 7 min
-if nargin<1 || isempty(n), n=1:4; end                % run all examples
+if nargin<4 || isempty(fs), fs=1000; end                 % def. fs = 1 kHz
+if nargin<3 || isempty(numOfTrials), numOfTrials=10; end % def. # trials = 10
+if nargin<2 || isempty(duration), duration=7*60; end     % def. dur. = 7 min
+if nargin<1 || isempty(n), n=1:4; end                    % run all examples
 
 numOfSamples=duration*fs;
 
@@ -78,12 +78,12 @@ for i=n
                % Phys. Rev. E 71, 011104, 2005
 
             H=0.7;
-            w=1/0.3; % estimate of the CoG natural frequency
+            f0=3; % estimate of the CoG natural frequency
             
-            s=sprintf('single fGn process with H=%g from %g until %gs + %g Hz oscillations',H,0,duration,w);
+            s=sprintf('single fGn process with H=%g from %g until %gs + %g Hz oscillations',H,0,duration,f0);
             y=psdfgn(numOfSamples,numOfTrials,H,0,fs);
             t=repmat((0:numOfSamples-1)'/fs,1,numOfTrials);
-            y=y+5*sin(2*pi*w*t+2*pi*repmat(rand(1,numOfTrials),numOfSamples,1)); % the phases of the additive oscillations are randomized over trials
+            y=y+5*sin(2*pi*f0*t+2*pi*repmat(rand(1,numOfTrials),numOfSamples,1)); % the phases of the additive oscillations are randomized over trials
 
     end
     
