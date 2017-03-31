@@ -1,5 +1,5 @@
 function [alpha,details]=fluctuationAnalysis(fBm,n,nf,varargin)
-%[alpha,R2,P,S,F,n,conf]=fluctuationAnalysis(fBm,n,nf,...)
+%[alpha,details]=fluctuationAnalysis(fBm,n,nf,...)
 %
 % Main function for the fluctuation analysis of (a set of) fBm series
 %
